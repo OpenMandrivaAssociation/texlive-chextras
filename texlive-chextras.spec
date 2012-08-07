@@ -1,12 +1,12 @@
-# revision 20044
+# revision 27118
 # category Package
 # catalog-ctan /macros/latex/contrib/chextras
-# catalog-date 2010-10-10 14:40:20 +0200
+# catalog-date 2012-07-20 19:39:58 +0200
 # catalog-license lppl1.3
-# catalog-version 1.0
+# catalog-version 1.01
 Name:		texlive-chextras
-Version:	1.0
-Release:	2
+Version:	1.01
+Release:	1
 Summary:	A companion package for the Swiss typesetter
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chextras
@@ -21,9 +21,9 @@ Requires(post):	texlive-kpathsea
 
 %description
 The package simplifies the preparation of Swiss documents and
-letters by setting up linguistic and common packages. While
-linked to the chletter document class, it is not tied to it and
-may be used as a general purpose package.
+letters by setting up linguistic and common packages. While it
+is a useful addition to the chletter document class, it is not
+tied to it and may be used as a general purpose package.
 
 %post
     %{_sbindir}/texlive.post
