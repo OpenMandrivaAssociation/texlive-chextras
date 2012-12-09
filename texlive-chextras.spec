@@ -59,3 +59,20 @@ tied to it and may be used as a general purpose package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Tue Aug 07 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.01-1
++ Revision: 812113
+- Update to latest release.
+
+* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
++ Revision: 750156
+- Rebuild to reduce used resources
+
+* Tue Nov 08 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
++ Revision: 729132
+- texlive-chextras
+- texlive-chextras
+- texlive-chextras
+
