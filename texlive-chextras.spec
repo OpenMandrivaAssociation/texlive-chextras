@@ -6,7 +6,7 @@
 # catalog-version 1.01
 Name:		texlive-chextras
 Version:	1.01
-Release:	5
+Release:	6
 Summary:	A companion package for the Swiss typesetter
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chextras
