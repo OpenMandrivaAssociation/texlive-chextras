@@ -1,19 +1,13 @@
-# revision 27118
-# category Package
-# catalog-ctan /macros/latex/contrib/chextras
-# catalog-date 2012-07-20 19:39:58 +0200
-# catalog-license lppl1.3
-# catalog-version 1.01
 Name:		texlive-chextras
-Version:	1.01
-Release:	10
+Version:	27118
+Release:	1
 Summary:	A companion package for the Swiss typesetter
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chextras
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.r27118.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.doc.r27118.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.source.r27118.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ is a useful addition to the chletter document class, it is not
 tied to it and may be used as a general purpose package.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -52,27 +46,11 @@ tied to it and may be used as a general purpose package.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Aug 07 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.01-1
-+ Revision: 812113
-- Update to latest release.
-
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
-+ Revision: 750156
-- Rebuild to reduce used resources
-
-* Tue Nov 08 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 729132
-- texlive-chextras
-- texlive-chextras
-- texlive-chextras
-
