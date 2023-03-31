@@ -1,6 +1,6 @@
 Name:		texlive-chextras
 Version:	27118
-Release:	1
+Release:	2
 Summary:	A companion package for the Swiss typesetter
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chextras
