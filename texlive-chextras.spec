@@ -3,7 +3,7 @@ Version:	27118
 Release:	2
 Summary:	A companion package for the Swiss typesetter
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chextras
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chextras
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.doc.r%{version}.tar.xz
