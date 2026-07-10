@@ -1,56 +1,26 @@
-Name:		texlive-chextras
-Version:	27118
-Release:	2
+%global tl_name chextras
+%global tl_revision 27118
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.01
+Release:	%{tl_revision}.1
 Summary:	A companion package for the Swiss typesetter
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chextras
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chextras.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package simplifies the preparation of Swiss documents and
-letters by setting up linguistic and common packages. While it
-is a useful addition to the chletter document class, it is not
-tied to it and may be used as a general purpose package.
+The package simplifies the preparation of Swiss documents and letters by
+setting up linguistic and common packages. While it is a useful addition
+to the chletter document class, it is not tied to it and may be used as
+a general purpose package.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/chextras/chextras.sty
-%{_texmfdistdir}/tex/latex/chextras/eu1lmros.fd
-%{_texmfdistdir}/tex/latex/chextras/eu1lmssos.fd
-%{_texmfdistdir}/tex/latex/chextras/eu1lmttos.fd
-%{_texmfdistdir}/tex/latex/chextras/eu1lmvttos.fd
-%{_texmfdistdir}/tex/latex/chextras/t1lmros.fd
-%{_texmfdistdir}/tex/latex/chextras/t1lmssos.fd
-%{_texmfdistdir}/tex/latex/chextras/t1lmttos.fd
-%{_texmfdistdir}/tex/latex/chextras/t1lmvttos.fd
-%doc %{_texmfdistdir}/doc/latex/chextras/README
-%doc %{_texmfdistdir}/doc/latex/chextras/chextras.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/chextras/chextras.dtx
-%doc %{_texmfdistdir}/source/latex/chextras/chextras.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
